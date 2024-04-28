@@ -1,11 +1,7 @@
 const Pool = require("pg").Pool;
 const pool = new Pool({
-  user: "saad",
-  host: "localhost",
-  database: "icecream",
-  password: "imagicanti",
-  port: 5432,
-});
+  connectionString: process.env.POSTGRES_URL ,
+})
 //get all Orders our database
 const getOrders = async () => {
   try {

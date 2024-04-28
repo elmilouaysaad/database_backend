@@ -1,12 +1,12 @@
 const express = require('express')
 const app = express()
 const port = 3001
-
+require('dotenv').config();
 const client_model = require('./clientModel')
 const order_model = require('./orderModel')
 app.use(express.json())
 app.use(function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', 'https://database-frontend.vercel.app/');
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers');
   next();

@@ -2,12 +2,8 @@ const Pool = require("pg").Pool;
 const bcrypt = require("bcrypt")
 const saltRounds = 10
 const pool = new Pool({
-  user: "saad",
-  host: "localhost",
-  database: "icecream",
-  password: "imagicanti",
-  port: 5432,
-});
+  connectionString: process.env.POSTGRES_URL ,
+})
 //get all Clients our database
 const getClients = async () => {
   try {
